@@ -1,0 +1,718 @@
+
+
+
+<!doctype html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Glossary</title>
+
+
+    <meta name="description"
+          content="Update what your Blog is about in this section"/>
+
+    <meta name="author" content="Your name goes here"/>
+    <meta name="copyright" content="Maybe consider a Creative Commons license"/>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="../css/foundation.css"/>
+    <link rel="stylesheet" href="../css/font-awesome.css"/>
+    <link rel="stylesheet" href="../css/coderay.css"/>
+    <!-- <link rel="stylesheet" href="../css/asciidoctor.css"/> -->
+    <link rel="stylesheet" href="../css/almighty.css"/>
+
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+
+
+<!-- Nav Bar -->
+
+<div class="top-bar">
+    <div class="top-bar-left">
+        <ul class="menu">
+            <li class="menu-text project-title">
+              <a href="../">Almighty</a>
+            </li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+       <ul class="menu">
+           <li>
+             <a href="../glossary/glossary.html">Glossary</a>
+           </li>
+           <li>
+             <a href="../meetings/agendas.html">Meetings</a>
+           </li>
+           <li>
+             <a href="../ux/ux-overview.html">UX Designs</a>
+           </li>
+       </ul>
+    </div>
+</div>
+<!-- End Nav -->
+
+<!-- Main Page Content and Sidebar -->
+
+<div class="row">
+    <!-- Main Blog Content -->
+    <div class="large-9 columns" role="content">
+
+        <h1>Glossary</h1>
+<div class="sect1">
+<h2 id="specific_terminology">Specific terminology</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ALM</dt>
+<dd>
+<p>Application lifecycle management.</p>
+</dd>
+<dt class="hdlist1">A/B testing</dt>
+<dd>
+<p>A/B  testing is usually a form of data driven testing in which a given outcome is measured and compared to previous test result to determine if an improvement was made or not. Often used as a synonym for multi-variant testing.</p>
+</dd>
+<dt class="hdlist1">Backlog</dt>
+<dd>
+<p>In agile terms, an identified list of things that need to be done relevant to a given business objective. Usually scoped to a larger organizational objective.</p>
+</dd>
+<dt class="hdlist1">Blue/Green deployment strategy</dt>
+<dd>
+<p>In this deployment strategy two target environments are deployed to in an alternating manner, thus allowing to always revert to the previous deployment in the face of a bad deployment</p>
+</dd>
+<dt class="hdlist1">Continuous value delivery</dt>
+<dd>
+<p>Refers to the idea of delivering working software features at the end of each sprint in a scrum agile process</p>
+</dd>
+<dt class="hdlist1">Continuous deployment</dt>
+<dd>
+<p>Refers to the process of automatically deploying software changes in a system as they occur instead of larger release cycles.</p>
+</dd>
+<dt class="hdlist1">Canary deployment strategy</dt>
+<dd>
+<p>In this deployment strategy , some fraction of the deployment environment is updated with a new change. If all goes well, then the rest of the environment is updated. This allows for testing of experimental features in a production environment.</p>
+</dd>
+<dt class="hdlist1">Dashboard</dt>
+<dd>
+<p>A user interface concept in which a person can view a collections of important aspects of a system on a single page in near real time, just as you would in a car dashboard.</p>
+</dd>
+<dt class="hdlist1">DevOps</dt>
+<dd>
+<p>A word used to describe the combination of  development and operations responsibilities into a single responsibility performed by a cross functional team.</p>
+</dd>
+<dt class="hdlist1">Experience</dt>
+<dd>
+<p>The user centric usage experience that the user has while interacting with the system</p>
+</dd>
+<dt class="hdlist1">Extensibility model</dt>
+<dd>
+<p>There are two ways to extend the SaaS development tool - either a third party application (with it’s own UI) can access our RESTful API Library, or you can write extensions that integrate within the SaaS development tool web experience which can add new build tasks, dashboard widgets, and more. Extensions are the second approach.</p>
+</dd>
+<dt class="hdlist1">Extension</dt>
+<dd>
+<p>Extensions contain a number of browser based add-ons that can be used to customize and extend the SaaS development tool. We call these <em>UI Components</em>. They are written with standard technologies - HTML, Angular2+TypeScript, SASS/CSS - and can be developed using your preferred dev tools. They utilize our RESTful API Library in order to easily interact with the Work Item Tracker and other applications/services.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Initially  UI Components must be included in the fabric8io/fabric8-ui github project. There is no “store” and there is no ability to add or remove extensions on the fly, without redeploying the UI. In other words for the Summit release, the UI must be dynamic, not fully extensible.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An extension is client side code, and so executes in the user’s browser, with the security context of the user</p>
+</div>
+<div class="paragraph">
+<p>An extension consists of:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A manifest file contains basic info about the extension.</p>
+</li>
+<li>
+<p>Static files that contain the logic of your extension, including HTML, Angular2+TypeScript, and SASS/CSS files.</p>
+</li>
+<li>
+<p>There are numerous places where you can add elements to the UI:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>New tab</p>
+</li>
+<li>
+<p>Menu item</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The extension model will be built incrementally, and longer term will include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assets which allow it to described in a store (e.g. image, markdown text)</p>
+</li>
+<li>
+<p>A store or marketplace for extensions</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Longer term, extension bundles will also be supported, which will include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None, one or more extensions that execute in the browser</p>
+</li>
+<li>
+<p>None, one or more third party services</p>
+</li>
+<li>
+<p>None, one or more Work Item Tracking Primitives (e.g. Work Item Type definitions, Process Templates definitions) that will be loaded in to the work item tracker in the user or organizations context</p>
+</li>
+<li>
+<p>Documentation associated with the extension bundle, including, but not limited to API docs, user docs, videos</p>
+</li>
+</ul>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Identity</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Iteration</dt>
+<dd>
+<p>In agile process terms, this represents one of many delivery cycles that software goes through to meet a specification</p>
+</dd>
+<dt class="hdlist1">Iteration (work item)</dt>
+<dd>
+<p>Per-team project, user defined paths used to group work into sprints, milestones or other event-specific or time-related periods. Newly created team projects have an initial set of iterations defined by the process template used to create the team project; the user can delete or modify these if desired. See also area (work item)</p>
+</dd>
+<dt class="hdlist1">KPI</dt>
+<dd>
+<p>An aggregated set of metrics that is used to derive or deduce an indication of success or failure based on the value of the aggregation</p>
+</dd>
+<dt class="hdlist1">Microservice</dt>
+<dd>
+<p>An architectural style of modularizing software with an emphasis on atomic deployment as the driver governing the size of the module. Communication between modules is typically done via a REST API using Http.</p>
+</dd>
+<dt class="hdlist1">Pipeline</dt>
+<dd>
+<p>A metaphor or piece of software in which execution is performed in several sequential stages, each stage consisting of one or more steps.</p>
+</dd>
+<dt class="hdlist1">Planner</dt>
+<dd>
+<p>A browser based planning system written in Angular 2 + TypeScript that enables teams creating software to plan out their work (create rich hierarchies of work items, create and plan iterations etc.). Uses the RESTful APIs from the Work Item Tracker to persist data. This is an example of a extension bundle.</p>
+</dd>
+<dt class="hdlist1">Process Template</dt>
+<dd>
+<p>An encoding of a development methodology (e.g. Scrum, CMMI, etc.) which is used to initially populate a newly created Team Project with elements relevant to that methodology. These elements may include, but are not limited to: a set of Work Item Type definitions; a default set of Iterations; work item queries; reports; pipeline definitions/templates;  security groups.</p>
+</dd>
+<dt class="hdlist1">Project, Team</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>[Note that we have not yet determined exactly what to call a ‘project’ in the context of this system. ‘Foo Project’ (with Foo replaced with the product name), Team Project, etc. are all possibilities. For now, let’s use Team Project.]</p>
+</li>
+<li>
+<p>A container for related data within a defined scope. It is up to the create of the project to define the scope. The scope can be very small (“this Team Project is used to manage the development of HelloWorld”) or very large (“this Team project is used to manage the development of all of Apache OpenOffice”). A Team Project has a name and a description. It may contain work item definitions and work items. It may contain Codebases. It may contain Workspaces. It may contain Pipeline Definitions. It may contain Teams. It contains at least one Area (“/” by default) and one Iteration. A Team Project is created from a Process Template, which seeds the Team Project with an initial set of Work Item Types and various other artifacts (e.g. an initial set of Iterations). Team Projects are either Public or Private. [Public projects permit anonymous viewing of all project content, although creation of content in the project may be controlled/limited by project administrators. Private projects permit essentially any access model.]</p>
+</li>
+<li>
+<p>Another way to think of a Team Project is to consider a ‘nested dolls’ view of Pizza the Hutt. The top-most container is Pizza the Hutt (the overall SaaS). Within Pizza the Hutt are (1) Users, (2) Organizations and (3) Process Templates. Both Users and Organizations may contain Team Projects. Essentially everything else in the SaaS is contained within a Team Project. So a Team Project is a container for everything in Pizza the Hutt, except for Users, Organizations and Process Templates.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">RESTful API Library</dt>
+<dd>
+<p>The SaAS product offers three levels of API, stable, semi-stable and unstable.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Stable APIs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Have a consistent design as specified by the API design guide</p>
+</li>
+<li>
+<p>Are accessed using OAuth</p>
+</li>
+<li>
+<p>Fully conform to REST principles</p>
+</li>
+<li>
+<p>Use a JSON payload</p>
+</li>
+<li>
+<p>Fully backwards compatible - a new version must be introduced to change (in any way that break the users) the API</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Old API versions continue to work forever (backwards compatibility)</p>
+</li>
+<li>
+<p>In essence new, optional, parameters or new verbs may be added to existing resources without incrementing the API version.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Fully documented (for example, the WIT API)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Semi-stable APIs</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Often the underlying component API (e.g. Jenkins) is exposed</p>
+</li>
+<li>
+<p>Often don’t follow our design guide</p>
+</li>
+<li>
+<p>Often don’t conform to REST or use JSON</p>
+</li>
+<li>
+<p>Some warning or deprecation is provided before change (policy TBC)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Unstable APIs:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Often the underlying component API (e.g. Jenkins) is exposed</p>
+</li>
+<li>
+<p>Often don’t follow our design guide</p>
+</li>
+<li>
+<p>Often don’t conform to REST or use JSON</p>
+</li>
+<li>
+<p>Are subject to change without warning</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Both types of API are used by the SaaS UI, and both can be used by users. Unstable APIs are clearly marked as such so that users have the correct expectation.</p>
+</li>
+<li>
+<p>Normally we start by introducing an unstable API to add functionality, and then create a stable API once the API is validated.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Remote Work Item</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Scenarios</dt>
+<dd>
+<p>A specific defined interaction/sequence of interactions with a system to achieve a given goal</p>
+</dd>
+<dt class="hdlist1">Service</dt>
+<dd>
+<p>A piece of software executing on a server</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Exposing a REST APIs (which can share the executing users security context)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Service, Hosted</dt>
+<dd>
+<p>A service, which additionally is:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Packaged as containers (defined using docker) either standalone or orchestrated using Kubernetes (definition file formats such as OpenShift templates or compose files supported)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Service, Hosted First Party</dt>
+<dd>
+<p>A hosted service, which additionally is:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Running in a namespace owned by the system administrator</p>
+</li>
+<li>
+<p>Has been vetted and validated by the system administrator</p>
+</li>
+<li>
+<p>TODO: Expectations on authorization and authentication - registration/certification</p>
+</li>
+<li>
+<p>Examples: Che</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Service, Hosted Third Party</dt>
+<dd>
+<p>A hosted service, which additionally is:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Executed within a namespace belonging to the user, in the security context of the user</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">SaaS</dt>
+<dd>
+<p>Software as a service</p>
+</dd>
+<dt class="hdlist1">Stack</dt>
+<dd>
+<p>A set of technologies chosen to satisfy a particular software implementation</p>
+</dd>
+<dt class="hdlist1">Sprint</dt>
+<dd>
+<p>In agile terms , a single iteration of delivery in which features are pulled from a backlog, estimated, implemented, tested, delivered according to some acceptance criteria.</p>
+</dd>
+<dt class="hdlist1">Team Project</dt>
+<dd>
+<p>See Project, Team.</p>
+</dd>
+<dt class="hdlist1">Team stakeholder</dt>
+<dd>
+<p>A party with influence who has a vested interest in the success of the project.</p>
+</dd>
+<dt class="hdlist1">Two pizza team</dt>
+<dd>
+<p>A colloquial way to describe the size of a team based on how many people does it take to consume 2 pizzas. The assumption is that they are not too hungry and that the pizza is a large pizza.</p>
+</dd>
+<dt class="hdlist1">Tracker</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Tracker Item</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Tracker Query</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">UI</dt>
+<dd>
+<p>The integrated, extensible User Interface</p>
+</dd>
+<dt class="hdlist1">User</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">User stories</dt>
+<dd>
+<p>A way to describe a scenario such that it has clear acceptance criteria and that unambiguously describes a user interaction , or the interaction between two parts of a system. Team members tak a user story and decompose it into tasks that satisfy the user story. Usually some point value is assigned to a story that serves a way to measure the rate of completing user stories.</p>
+</dd>
+<dt class="hdlist1">Value proposition</dt>
+<dd>
+<p>A proposed set of capabilities that is focused on delivering some specific value to the end user or customer</p>
+</dd>
+<dt class="hdlist1">Velocity</dt>
+<dd>
+<p>The rate at which an individual/team/organization completes user stories. Typically measured in story points. Story points are assigned to each user story for each sprint based on a relative numerical value describing the relative amount of effort required to complete. The fibonacci series is often used for relative sizing of effort. 1,2,3,5,8,13,21 where 1 could represent is 1-2 hours effort and a 21 would represent an entire sprint duration (2 weeks..1month)</p>
+</dd>
+<dt class="hdlist1">Workflow</dt>
+<dd>
+<p>The set of activities a developer must go through to complete a given task</p>
+</dd>
+<dt class="hdlist1">Work item</dt>
+<dd>
+<p>A captured representation of some work that has to be done and an instance of a <em>Work Item Type</em>. It must have a type, and it must follow the rules defined by its type.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="title">Example Work Item</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">type</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Task</span><span class="delimiter">&quot;</span></span>,
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">task1</span><span class="delimiter">&quot;</span></span>,
+    <span class="key"><span class="delimiter">&quot;</span><span class="content">fields</span><span class="delimiter">&quot;</span></span>: {
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">system.owner</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">dev_user</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">system.title</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">Write API for user registration</span><span class="delimiter">&quot;</span></span>,
+        <span class="key"><span class="delimiter">&quot;</span><span class="content">system.duration</span><span class="delimiter">&quot;</span></span>:<span class="integer">3</span>
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example work item has <code>type</code> of <code>Task</code> and to be valid must meet any rules defined by the <code>Task</code> Work Item Type.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Work Item Tracking</dt>
+<dd>
+<p>TODO</p>
+</dd>
+<dt class="hdlist1">Work Item Tracking Primitive Definitions</dt>
+<dd>
+<p>The metadata that defines the data structures of the captured representations of work, and how it is executed in source format (not loaded in to the system)</p>
+</dd>
+<dt class="hdlist1">Work Item Tracking Primitives</dt>
+<dd>
+<p>The metadata that defines the data structures of the captured representations of work, and how it is executed, loaded in the context of a user, organisation or system</p>
+</dd>
+<dt class="hdlist1">Work item tracker</dt>
+<dd>
+<p>The piece of software written in Go that exposes a series of stable, semi-stable and unstable APIs that enable the management of both instances of and types of work items, including work item types, work item categories, areas, iterations and workflows. Other services may register to receive notifications of events by allowing third party services to register web hooks.</p>
+</dd>
+<dt class="hdlist1">Work Item Type (WIT)</dt>
+<dd>
+<p>A basic data structure that defines the valid structure and fields for a <em>Work Item</em>. Work item types support single inheritance; the "extendedTypeID" parameter specifies the ID of the parent work item type.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="title">Example Work Item Type</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="json">{
+   <span class="key"><span class="delimiter">&quot;</span><span class="content">name</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">Task</span><span class="delimiter">&quot;</span></span>,
+   <span class="key"><span class="delimiter">&quot;</span><span class="content">fields</span><span class="delimiter">&quot;</span></span>:{
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">system.owner</span><span class="delimiter">&quot;</span></span>:{
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span>:<span class="value">true</span>,
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">kind</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">user</span><span class="delimiter">&quot;</span></span>
+      },
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">system.title</span><span class="delimiter">&quot;</span></span>:{
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span>:<span class="value">true</span>,
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">kind</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">string</span><span class="delimiter">&quot;</span></span>
+      },
+      <span class="key"><span class="delimiter">&quot;</span><span class="content">system.duration</span><span class="delimiter">&quot;</span></span>:{
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">required</span><span class="delimiter">&quot;</span></span>:<span class="value">true</span>,
+         <span class="key"><span class="delimiter">&quot;</span><span class="content">kind</span><span class="delimiter">&quot;</span></span>:<span class="string"><span class="delimiter">&quot;</span><span class="content">integer</span><span class="delimiter">&quot;</span></span>
+      }
+   },
+ <span class="key"><span class="delimiter">&quot;</span><span class="content">extendedTypeID</span><span class="delimiter">&quot;</span></span>: <span class="value">null</span>
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="general_terminology">General terminology</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">API</dt>
+<dd>
+<p>Application programming interface.</p>
+</dd>
+<dt class="hdlist1">API first</dt>
+<dd>
+<p>A style of  contract first development in which an experience is constructed that defines and informs the API that the software  need to function. Only then is the API implemented. This approach yields API’s that are simpler and more suited to the task at hand.</p>
+</dd>
+<dt class="hdlist1">Area (work item)</dt>
+<dd>
+<p>Per-team project, user defined paths used to group work items by team, product or feature areas. Newly created team projects contain a single, root area that matches the team project name; the user can modify it if desired. See also iteration (work item)</p>
+</dd>
+<dt class="hdlist1">Asciidoc</dt>
+<dd>
+<p>A simplified form of markup suited to creating documents. Similar to markdown in concept.</p>
+</dd>
+<dt class="hdlist1">Concern</dt>
+<dd>
+<p>In a software context , a concern refers to a capability, such as logging or security, that is used across several parts of a solution, and thus is shared but self contained at the same time.</p>
+</dd>
+<dt class="hdlist1">Fault tolerance</dt>
+<dd>
+<p>The capability of software to continue to function in a presence of failure</p>
+</dd>
+<dt class="hdlist1">IDE</dt>
+<dd>
+<p>Integrated Development Environment, often used to refer to tools like Eclipse, IntelliJ or Visual Studio</p>
+</dd>
+<dt class="hdlist1">Java EE</dt>
+<dd>
+<p>Java Enterprise Edition</p>
+</dd>
+<dt class="hdlist1">Journey</dt>
+<dd>
+<p>In the context of learning, a journey represents the path through a subject matter curriculum a person might follow</p>
+</dd>
+<dt class="hdlist1">JVM</dt>
+<dd>
+<p>Java Virtual Machine</p>
+</dd>
+<dt class="hdlist1">LAMP</dt>
+<dd>
+<p>Linux Apache MySQL PHP</p>
+</dd>
+<dt class="hdlist1">Markdown</dt>
+<dd>
+<p>A simplified document markup style optimized for reading and document writing</p>
+</dd>
+<dt class="hdlist1">RHEL</dt>
+<dd>
+<p>Red Hat Enterprise Linux</p>
+</dd>
+<dt class="hdlist1">RDBMS</dt>
+<dd>
+<p>Relational Database Management System</p>
+</dd>
+<dt class="hdlist1">Scalability</dt>
+<dd>
+<p>The ability of a software system to increase its capacity as demand grows, and this without changing the software.</p>
+</dd>
+<dt class="hdlist1">Services, First Party</dt>
+<dd>
+<p>Backend services,</p>
+</dd>
+<dt class="hdlist1">Software-collections</dt>
+<dd>
+<p>A name describing the set of  supported software repositories that people subscribe to</p>
+</dd>
+<dt class="hdlist1">Statelessness</dt>
+<dd>
+<p>The trait of software architecture that allows the saving and retrieving state from different processes</p>
+</dd>
+<dt class="hdlist1">Upstream</dt>
+<dd>
+<p>In open source , the upstream efforts refer to the collective efforts, repositories of the original authors of a open source software projects</p>
+</dd>
+<dt class="hdlist1">XAMP</dt>
+<dd>
+<p>Cross platform Apache MySQL and PHP</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+    </div>
+
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+
+    <aside class="large-3 columns">
+
+        <h5>About</h5>
+
+        <p>Almighty is about providing tools for the planning and
+    execution of an idea to production in a highly distributed team. Part of the Red Hat Developers
+    Group.</p>
+
+        <h5>Blueprints</h5>
+        <ul>
+        
+            <li>
+                <a href="../blueprints/build_architecture.html">Build SPI Architecture</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/build_auth_flow.html">Build Authentication Flow</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/build_concept.html">Build Concepts</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/build_service.html">Build stories</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/design_overview.html">Design Overview</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/developers_guide.html">Developer&#8217;s Guide</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/model_overview.html">Model Overview</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/notification.html">Notification</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/pullrequest_build.html">Pull Request to Build</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/remote_issue_trackers.html">Remote Issue Trackers</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/scheduler.html">Scheduler</a>
+            </li>
+        
+            <li>
+                <a href="../blueprints/test.html">Test diagram</a>
+            </li>
+        
+        </ul>
+
+        <h6>Actions</h6>
+        <ul>
+            <li>
+                <a href="https://github.com/ALMighty/almighty-devdoc/edit/master/glossary/glossary.adoc">Edit</a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- End Sidebar -->
+</div>
+
+<!-- End Main Content and Sidebar -->
+
+<!-- Footer -->
+
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-12 columns">
+                <p>This is a work in progress.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/vendor/foundation.js"></script>
+<script src="../js/app.js"></script>
+
+</body>
+</html>
