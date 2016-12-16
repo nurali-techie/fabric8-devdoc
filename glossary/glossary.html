@@ -99,6 +99,50 @@
 <dd>
 <p>In this deployment strategy , some fraction of the deployment environment is updated with a new change. If all goes well, then the rest of the environment is updated. This allows for testing of experimental features in a production environment.</p>
 </dd>
+<dt class="hdlist1">Collaboration Space</dt>
+<dd>
+<p>A container for related data within a defined scope. It is up to the creator of the collaboration space to define the scope. The scope can be very small ("this Collaboration Space is used to manage the development of HelloWorld") or very large ("this Collaboration Space is used to manage the development of all of Apache OpenOffice"). A Collaboration Space has a name and a description and may contain:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>work item definitions</p>
+</li>
+<li>
+<p>work items</p>
+</li>
+<li>
+<p>Codebases</p>
+</li>
+<li>
+<p>Workspaces</p>
+</li>
+<li>
+<p>Pipeline Definitions</p>
+</li>
+<li>
+<p>Teams.</p>
+<div class="paragraph">
+<p>By default it contains:</p>
+</div>
+</li>
+<li>
+<p>one Area ("/" by default)</p>
+</li>
+<li>
+<p>one Iteration.</p>
+<div class="paragraph">
+<p>A Collaboration Space is created from a Process Template, which seeds the Collaboration Space with an initial set of Work Item Types and various other artifacts (e.g. an initial set of Iterations). Collaboration Spaces are either Public or Private. [Public collaboriation spaces permit anonymous viewing of all content within the collaboration space, although creation of content in the collaboration space may be controlled/limited by collaboration space administrators. Private collaboration spaces permit essentially any access model.]</p>
+</div>
+<div class="paragraph">
+<p>Another way to think of a Collaboration Space is to consider a 'nested dolls' view of Pizza the Hutt. The top-most container is Pizza the Hutt (the overall SaaS). Within Pizza the Hutt are (1) Users, (2) Organizations and (3) Process Templates. Both Users and Organizations may contain Collaboration Spaces. Essentially everything else in the SaaS is contained within a Collaboration Space. So the Pizza the Hutt Collaboration Space is a container for everything in Pizza the Hutt, except for Users, Organizations and Process Templates.</p>
+</div>
+<div class="paragraph">
+<p>Collaboration Spaces are sometimes simply refered to as spaces. E.g. "the HelloWorld collaboration space" and "the HelloWorld space" refer to the same thing.</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
 <dt class="hdlist1">Dashboard</dt>
 <dd>
 <p>A user interface concept in which a person can view a collections of important aspects of a system on a single page in near real time, just as you would in a car dashboard.</p>
@@ -128,7 +172,7 @@
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Initially  UI Components must be included in the fabric8io/fabric8-ui github project. There is no “store” and there is no ability to add or remove extensions on the fly, without redeploying the UI. In other words for the Summit release, the UI must be dynamic, not fully extensible.
+Initially  UI Components must be included in the fabric8io/fabric8-ui github project. There is no "store" and there is no ability to add or remove extensions on the fly, without redeploying the UI. In other words for the Summit release, the UI must be dynamic, not fully extensible.
 </td>
 </tr>
 </table>
@@ -209,7 +253,7 @@ Initially  UI Components must be included in the fabric8io/fabric8-ui github pro
 </dd>
 <dt class="hdlist1">Iteration (work item)</dt>
 <dd>
-<p>Per-team project, user defined paths used to group work into sprints, milestones or other event-specific or time-related periods. Newly created team projects have an initial set of iterations defined by the process template used to create the team project; the user can delete or modify these if desired. See also area (work item)</p>
+<p>Per-collaboration space, user defined paths used to group work into sprints, milestones or other event-specific or time-related periods. Newly created collaboration spaces have an initial set of iterations defined by the process template used to create the team collaboration space; the user can delete or modify these if desired. See also area (work item)</p>
 </dd>
 <dt class="hdlist1">KPI</dt>
 <dd>
@@ -229,23 +273,7 @@ Initially  UI Components must be included in the fabric8io/fabric8-ui github pro
 </dd>
 <dt class="hdlist1">Process Template</dt>
 <dd>
-<p>An encoding of a development methodology (e.g. Scrum, CMMI, etc.) which is used to initially populate a newly created Team Project with elements relevant to that methodology. These elements may include, but are not limited to: a set of Work Item Type definitions; a default set of Iterations; work item queries; reports; pipeline definitions/templates;  security groups.</p>
-</dd>
-<dt class="hdlist1">Project, Team</dt>
-<dd>
-<div class="ulist">
-<ul>
-<li>
-<p>[Note that we have not yet determined exactly what to call a ‘project’ in the context of this system. ‘Foo Project’ (with Foo replaced with the product name), Team Project, etc. are all possibilities. For now, let’s use Team Project.]</p>
-</li>
-<li>
-<p>A container for related data within a defined scope. It is up to the create of the project to define the scope. The scope can be very small (“this Team Project is used to manage the development of HelloWorld”) or very large (“this Team project is used to manage the development of all of Apache OpenOffice”). A Team Project has a name and a description. It may contain work item definitions and work items. It may contain Codebases. It may contain Workspaces. It may contain Pipeline Definitions. It may contain Teams. It contains at least one Area (“/” by default) and one Iteration. A Team Project is created from a Process Template, which seeds the Team Project with an initial set of Work Item Types and various other artifacts (e.g. an initial set of Iterations). Team Projects are either Public or Private. [Public projects permit anonymous viewing of all project content, although creation of content in the project may be controlled/limited by project administrators. Private projects permit essentially any access model.]</p>
-</li>
-<li>
-<p>Another way to think of a Team Project is to consider a ‘nested dolls’ view of Pizza the Hutt. The top-most container is Pizza the Hutt (the overall SaaS). Within Pizza the Hutt are (1) Users, (2) Organizations and (3) Process Templates. Both Users and Organizations may contain Team Projects. Essentially everything else in the SaaS is contained within a Team Project. So a Team Project is a container for everything in Pizza the Hutt, except for Users, Organizations and Process Templates.</p>
-</li>
-</ul>
-</div>
+<p>An encoding of a development methodology (e.g. Scrum, CMMI, etc.) which is used to initially populate a newly created Collaboration Space with elements relevant to that methodology. These elements may include, but are not limited to: a set of Work Item Type definitions; a default set of Iterations; work item queries; reports; pipeline definitions/templates;  security groups.</p>
 </dd>
 <dt class="hdlist1">RESTful API Library</dt>
 <dd>
@@ -399,6 +427,10 @@ Initially  UI Components must be included in the fabric8io/fabric8-ui github pro
 <dd>
 <p>Software as a service</p>
 </dd>
+<dt class="hdlist1">Space</dt>
+<dd>
+<p>See Collaboration Space</p>
+</dd>
 <dt class="hdlist1">Stack</dt>
 <dd>
 <p>A set of technologies chosen to satisfy a particular software implementation</p>
@@ -406,10 +438,6 @@ Initially  UI Components must be included in the fabric8io/fabric8-ui github pro
 <dt class="hdlist1">Sprint</dt>
 <dd>
 <p>In agile terms , a single iteration of delivery in which features are pulled from a backlog, estimated, implemented, tested, delivered according to some acceptance criteria.</p>
-</dd>
-<dt class="hdlist1">Team Project</dt>
-<dd>
-<p>See Project, Team.</p>
 </dd>
 <dt class="hdlist1">Team stakeholder</dt>
 <dd>
@@ -542,7 +570,7 @@ Initially  UI Components must be included in the fabric8io/fabric8-ui github pro
 </dd>
 <dt class="hdlist1">Area (work item)</dt>
 <dd>
-<p>Per-team project, user defined paths used to group work items by team, product or feature areas. Newly created team projects contain a single, root area that matches the team project name; the user can modify it if desired. See also iteration (work item)</p>
+<p>Per-collaboration space, user defined paths used to group work items by team, product or feature areas. Newly created colaboration spaces contain a single, root area that matches the collaboration space name; the user can modify it if desired. See also iteration (work item)</p>
 </dd>
 <dt class="hdlist1">Asciidoc</dt>
 <dd>
